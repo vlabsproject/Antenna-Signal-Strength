@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+         <!-- These 3 links are only for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="../css/simulation.css">
+    
+      
+
+        <title>Simulation</title>
+    </head>
+    <body id="body-pd">
+ 
+       
+
+
+              <!-- Buttons and Readings table section -->
+       
+     <div class="playground">
+        <div class="button-playground">
+            <button id="calculate-button">Calculate</button>
+            <button id="take-reading-button">Take Reading</button>
+        </div> 
+        <div class="transmitter-box">
+            <img src="/assests/img/a0342be89815269be3065e4f83b0c97c-removebg-preview.png" > 
+        </div>
+
+        <div class="receiver-box" id="movable-box">
+            <img src="/assests/img/1000_F_447440420_IZdm3fynK163vqRl4XqeB6769wrRVxc8-removebg-preview.png">
+        </div>
+
+        <div id="distance-display">Distance: 0.00 meters</div>
+        <div id="signal-strength-display">Signal Strength: Calculating...</div>
+    </div>
+
+ 
+
+ 
+</div>
+ 
+
+
+
+    <!-- Readings table -->
+   <table id="readings-table">
+        <thead>
+            <tr>
+                <th>Serial</th>
+                <th>Transmitter Power (dBm)</th>
+                <th>Path Loss Exponent</th>
+                <th>Carrier Frequency (Hz)</th>
+                <th>Receiver Antenna Height (meters)</th>
+                <th>Transmitter Antenna Height (meters)</th>
+                <th>Distance (meters)</th>
+                <th>Signal Strength (dBm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Reading rows will be added dynamically here -->
+         </tbody>
+    </table> 
+
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    </header>
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div>
+            <a href="#" class="nav__logo">
+                <i class='bx bx-layer nav__logo-icon'></i>
+                <span class="nav__logo-name">Virtual Labs</span>
+            </a>
+
+            <div class="nav__list">
+                   
+                   
+                <a href="#" class="nav__link">
+                    <i class='bx bxs-info-circle' style='color:#fcf5f5' onclick="window.location.href='../html/introduction.html'" ></i>
+                    <span class="nav__name" onclick="window.location.href='../html/introduction.html'">Introduction</span>
+                </a>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-book-bookmark' style='color:#fcf5f5'  onclick="window.location.href='../html/Theory.html'"></i>
+                    <span class="nav__name" onclick="window.location.href='../html/Theory.html'">Theory</span>
+                </a>
+                
+                <a href="#" class="nav__link active">
+                    <i class='bx bx-laptop' style='color:#fcf5f5' onclick="window.location.href='../html/simulation.html'"></i>
+                    <span class="nav__name" onclick="window.location.href='../html/simulation.html'">Simulation </span>
+                </a>
+                <a href="#" class="nav__link">
+                    <i class='bx bx-brain' style='color:#ffffff'  onclick="window.location.href='../html/quiz.html'" ></i>
+                    <span class="nav__name" onclick="window.location.href='../html/quiz.html'">Quiz</span>
+                </a>
+
+
+           
+            </div>
+           
+        </div>
+        <a href="#" class="nav__link">
+            <i class='bx bx-log-out nav__icon'onclick="window.location.href='/index.html'"></i>
+            <span class="nav__name" onclick="window.location.href='/index.html'">Log Out</span>
+        </a>
+            </nav>
+        </div>
+        
+      <!-- User input fields section -->
+    <div class="input-playground">
+       
+      <div class="label">
+        <label for="transmitter-power">Transmitter Power (dBm):</label>
+        <label for="pathloss-exponent">Path Loss Exponent:</label>
+        <label for="carrier-frequency">Carrier Frequency (Hz):</label>
+        <label for="receiver-height">Receiver Antenna Height (meters):</label>
+        <label for="transmitter-height">Transmitter Antenna Height (meters):</label>
+    </div>
+        <div class="inputvalue">
+            <input type="number" id="transmitter-power" value="20">
+            <input type="number" id="pathloss-exponent" value="2">
+            <input type="number" id="carrier-frequency" value="2.4e9">
+            <input type="number" id="receiver-height" value="1">
+            <input type="number" id="transmitter-height" value="1">
+        </div>
+      
+    </div>
+      
+        <!--===== MAIN JS =====-->
+        <script src="../javascript/simulation.js"></script>
+     
+    </body>
+</html>
